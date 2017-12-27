@@ -62,6 +62,7 @@ public class Hyberconfig
 		
 	}
 	
+@SuppressWarnings("deprecation")
 @Autowired 
 @Bean(name="sessionFactory")
 	public SessionFactory getHibernateSession(DataSource datasource)
@@ -72,7 +73,6 @@ public class Hyberconfig
 		lsfb.addProperties(getHibernateProperties());
 		
 		lsfb.addAnnotatedClass(User.class);
-		
 		lsfb.addAnnotatedClass(Supplier.class);
 		lsfb.addAnnotatedClass(Category.class);
 		lsfb.addAnnotatedClass(Product.class);

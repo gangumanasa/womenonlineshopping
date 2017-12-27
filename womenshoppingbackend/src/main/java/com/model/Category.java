@@ -14,16 +14,20 @@ import org.springframework.stereotype.Component;
 //@Table(Category)
 public class Category implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int cid;
 	private String cNmae;
 	@OneToMany(targetEntity=Product.class, fetch=FetchType.EAGER, mappedBy="Category")
-	private set<product> product=new HashSet<product>(0);
+	private Set<Product> product=new HashSet<Product>(0);
 	
-	public set<product> getProduct() {
+	public Set<Product> getProduct() {
 		return product;
 	}
-	public void setProduct(set<product> product) {
+	public void setProduct(Set<Product> product) {
 		this.product = product;
 	}
 	public int getCid() {

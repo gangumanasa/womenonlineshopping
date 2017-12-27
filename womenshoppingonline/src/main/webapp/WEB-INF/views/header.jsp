@@ -28,13 +28,13 @@
 		
 	<ul class="nav navbar-nav">
 	
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-Demo">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-Demo">
 	
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
 	
-	</button>
+		</button>
 	</ul>
 </div>
 

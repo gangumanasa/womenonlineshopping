@@ -37,6 +37,12 @@ import com.model.User;
 			
 		}
 
+		public static void insertUser(User user) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		
 	}
 
 

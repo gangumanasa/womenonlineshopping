@@ -1,7 +1,9 @@
 package com.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +13,8 @@ import com.daoimpl.Userdaoimpl;
 import com.model.User;
 
 @Controller
-public class indexcontroller {
+public class indexcontroller 
+{
 	@Autowired
 	Userdaoimpl userdaoimpl;
 	
@@ -35,23 +38,25 @@ public class indexcontroller {
 	
 
 	@RequestMapping (value="/saveRegister", method=RequestMethod.POST)
-	public ModelAndView saveRegister(@ModelAttribute ("user") User user)
-	
+	public ModelAndView saveRegister(@ModelAttribute ("user") User user,BindingResult result)
+	{
 			ModelAndView mv=new ModelAndView();
 	
 			
 	if(result.hasErrors())
 		{
-			mv.SetViewName("register");
+			mv.setViewName("register");
 		
 		}
 	else
 	{
 		User.setRole("ROLE_USER");
 		Userdaoimpl.insertUser(user);
-		mv.setViewwName("index");
+		mv.setViewName("index");
 		
 				
 	}
 	return mv;
+}
+	
 }

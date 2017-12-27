@@ -3,10 +3,7 @@ package com.model;
 import java.io.Serializable;
 import java.util.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 
@@ -14,18 +11,22 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Supplier implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int sid;
 	private  String suppliername;
 	
 	@OneToMany(targetEntity=Product.class, fetch=FetchType.EAGER, mappedBy="Supplier")
-	private set<product> product=new HashSet<product>(0);
+	private Set<Product> product=new HashSet<Product>(0);
 
-	public set<product> getProduct() {
+	public Set<Product> getProduct() {
 		return product;
 	}
 
-	public void setProduct(set<product> product) {
+	public void setProduct(Set<Product> product) {
 		this.product = product;
 	}
 

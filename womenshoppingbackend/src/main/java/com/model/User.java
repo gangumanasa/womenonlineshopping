@@ -13,6 +13,10 @@ import org.springframework.context.annotation.ComponentScan;
 public class User implements Serializable 
 	
  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	
 	private int id;
@@ -43,8 +47,8 @@ public class User implements Serializable
 	public String getRole() {
 		return role;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public static void setRole(String role) {
+		
 	}
 	public String getAddress() {
 		return address;
