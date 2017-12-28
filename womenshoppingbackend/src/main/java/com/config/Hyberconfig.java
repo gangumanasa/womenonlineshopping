@@ -1,4 +1,5 @@
 package com.config;
+import com.dao.*;
 import com.model.*;
 
 
@@ -26,7 +27,7 @@ public class Hyberconfig
 	@Autowired
 	@Bean(name="datasource")
 	
-	public DataSource getHibernateData()
+	public DataSource getH2Data()
 	{
 		
 		DriverManagerDataSource datasource=new DriverManagerDataSource();
@@ -43,21 +44,15 @@ public class Hyberconfig
 	}
 	
 	
-	private Properties getHibernateProperties()
+	private Properties getH2Properties()
 	{
 		Properties p=new Properties();
 		
 		p.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-				
-
 		p.put("hibernate.hbm2ddl.auto", "update");
 		p.put("hibernate.show_sql", "true");
 		
 		System.out.println(" Table created .....");
-		
-		
-		
-		
 		return p;
 		
 	}
@@ -70,13 +65,13 @@ public class Hyberconfig
 	
 		LocalSessionFactoryBuilder lsfb=new LocalSessionFactoryBuilder(datasource);
 		
-		lsfb.addProperties(getHibernateProperties());
+		lsfb.addProperties(getH2Properties());
 		
 		lsfb.addAnnotatedClass(User.class);
 		lsfb.addAnnotatedClass(Supplier.class);
 		lsfb.addAnnotatedClass(Category.class);
 		lsfb.addAnnotatedClass(Product.class);
-		
+		System.out.println("---------SessionFactory created------");
 		return lsfb.buildSessionFactory();
 		
 	}
@@ -92,6 +87,10 @@ public HibernateTransactionManager getHibernateTransaction(SessionFactory sf)
 	
 	
 }
+public Userdao getUserdao(SessionFactory sessionfactory)
+{
+
+
 }
 
 

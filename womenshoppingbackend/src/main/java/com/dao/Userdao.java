@@ -4,7 +4,7 @@ import com.model.User;
 
 public interface Userdao {
 
-	public void AddUser(User user);
+	public boolean insertUser(User user);
 	
 
 

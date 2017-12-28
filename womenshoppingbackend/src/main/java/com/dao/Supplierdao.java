@@ -1,5 +1,7 @@
 package com.dao;
+import com.model.Supplier;
 
-public class Supplierdao {
+public interface Supplierdao {
 
+	public void insertSupplier(Supplier supplier);
 }

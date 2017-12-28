@@ -1,5 +1,8 @@
 package com.dao;
+import com.model.*;
 
-public class Categorydao {
+public interface Categorydao {
 
+	public void insertCategory(Category category);
+	
 }

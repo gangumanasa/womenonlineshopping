@@ -18,28 +18,28 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
-    <version>4.3.12.RELEASE</version>
+    <version>4.3.11.RELEASE</version>
 </dependency>
     
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-jdbc</artifactId>
-    <version>4.3.12.RELEASE</version>
+    <version>4.3.11.RELEASE</version>
 </dependency>
     
    
     <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-web</artifactId>
-    <version>4.3.12.RELEASE</version>
+    <version>4.3.11.RELEASE</version>
 </dependency>
     
     
@@ -47,7 +47,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-orm</artifactId>
-    <version>4.3.12.RELEASE</version>
+    <version>4.3.11.RELEASE</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
@@ -61,7 +61,7 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
-    <version>4.3.11.Final</version>
+    <version>5.2.9.Final</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
@@ -92,4 +92,18 @@
 
     
   </dependencies>
+  
+  <build>
+  <plugins>
+  <plugin>
+  <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.1</version>
+    
+    <configuration>
+    	<source>1.8</source>
+    	<target>1.8</target>
+    </configuration>
+    </plugin>
+    </plugins>
+  </build>
 </project>

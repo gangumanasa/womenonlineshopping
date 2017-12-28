@@ -45,7 +45,8 @@
 	<li><a href="index">Home</a></li>
 	<li><a href="contact"><i class= "fa fa-address-book" aria-hidden="true"></i> </a></li>
 	<li><a href="productList">Product List </a></li>
-	<li><a href="Admin">Admin</a></li>
+	<li><a href="adding">Admin</a></li>
+	<li><a href="goToRegister">Register</a></li> 
 
 </ul>
 </div>
