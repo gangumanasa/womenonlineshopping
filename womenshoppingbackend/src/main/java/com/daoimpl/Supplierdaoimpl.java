@@ -1,39 +1,46 @@
 package com.daoimpl;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.dao.*;
+import com.dao.Supplierdao;
 import com.model.Supplier;
 
-@Repository
-@Service
+
+@Repository("supplierDAO")
+
 public class Supplierdaoimpl implements Supplierdao
 {
-	
-	@Autowired
+	@Autowired 
 	SessionFactory sessionFactory;
-
-	@Autowired
-	public void SessionFactory(SessionFactory sessionFactory) 
+	
+	
+	public Supplierdaoimpl(SessionFactory sessionFactory)
 	{
-		this.sessionFactory = sessionFactory;
+		this.sessionFactory =sessionFactory;
 	}
 	
-	public  void insertSupplier(Supplier supplier)
-	
+	@Transactional
+	public boolean insertSupplier(Supplier supplier) 
 	{
-		Session session=sessionFactory.openSession();
 
-		session.beginTransaction();
-		session.saveOrUpdate(supplier);
-		session.getTransaction().commit();
-
+		try 
+		{
+sessionFactory.getCurrentSession().saveOrUpdate(supplier);
+System.out.println("Insertion Successfully....");
+		return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception raised......"+e);
+		return false;
+		}
 	}
-
 	
 	
 	

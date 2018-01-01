@@ -1,14 +1,10 @@
 package com.config;
-import com.dao.*;
-import com.model.*;
-
 
 import java.util.Properties;
 
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,80 +13,68 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.model.User;
+
 
 @Configuration
-@ComponentScan("com.niit")
+@ComponentScan("com")
 @EnableTransactionManagement
-public class Hyberconfig
+public class Hyberconfig 
 {
+
 	
-	@Autowired
-	@Bean(name="datasource")
-	
+	@Bean(name="dataSource")
 	public DataSource getH2Data()
 	{
-		
 		DriverManagerDataSource datasource=new DriverManagerDataSource();
+		
 		
 		datasource.setDriverClassName("org.h2.Driver");
 		datasource.setUrl("jdbc:h2:tcp://localhost/~/batchs180250");
 		datasource.setUsername("sa");
 		datasource.setPassword("");
-		
-		System.out.println("H2 DataBase connected.....");
-		
+		System.out.println("------H2 is conencted ------");
 		return datasource;
+		
 		
 	}
 	
-	
-	private Properties getH2Properties()
+	private Properties getH2properties()
 	{
 		Properties p=new Properties();
 		
 		p.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-		p.put("hibernate.hbm2ddl.auto", "update");
-		p.put("hibernate.show_sql", "true");
 		
-		System.out.println(" Table created .....");
+		p.put("hibernate.hbm2ddl.auto","update");
+		p.put("hibernate.show_sql","true");
+		
+		System.out.println("Hibernate properties created .....");
 		return p;
 		
+		
 	}
 	
-@SuppressWarnings("deprecation")
-@Autowired 
-@Bean(name="sessionFactory")
-	public SessionFactory getHibernateSession(DataSource datasource)
+	@Bean(name="sessionFactory")
+	public SessionFactory getSessionFactory()
 	{
-	
-		LocalSessionFactoryBuilder lsfb=new LocalSessionFactoryBuilder(datasource);
+		LocalSessionFactoryBuilder slfb=new LocalSessionFactoryBuilder(getH2Data());
 		
-		lsfb.addProperties(getH2Properties());
+		slfb.addProperties(getH2properties());
 		
-		lsfb.addAnnotatedClass(User.class);
-		lsfb.addAnnotatedClass(Supplier.class);
-		lsfb.addAnnotatedClass(Category.class);
-		lsfb.addAnnotatedClass(Product.class);
-		System.out.println("---------SessionFactory created------");
-		return lsfb.buildSessionFactory();
+		slfb.addAnnotatedClass(User.class);
+		
+		System.out.println("Session Factory created....");
+		return slfb.buildSessionFactory();
 		
 	}
-
-@Autowired
-@Bean(name="transactionManager")
-public HibernateTransactionManager getHibernateTransaction(SessionFactory sf)
-{
 	
-	HibernateTransactionManager tm=new HibernateTransactionManager(sf);
-	
-	return tm;
+	@Bean("transactionManager")
+	public HibernateTransactionManager getHibernateTransactionManager(SessionFactory sessionFactory)
+	{
+		return new HibernateTransactionManager(sessionFactory);
+		
+		
+	}
 	
 	
 }
-public Userdao getUserdao(SessionFactory sessionfactory)
-{
-
-
-}
-
-

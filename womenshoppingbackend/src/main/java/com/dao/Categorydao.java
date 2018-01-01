@@ -3,6 +3,6 @@ import com.model.*;
 
 public interface Categorydao {
 
-	public void insertCategory(Category category);
+	public boolean insertCategory(Category category);
 	
 }

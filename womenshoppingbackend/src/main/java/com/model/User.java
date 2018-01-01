@@ -5,10 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 
 
-@ComponentScan
+@Component
 @Entity
 public class User implements Serializable 
 	
@@ -47,7 +48,7 @@ public class User implements Serializable
 	public String getRole() {
 		return role;
 	}
-	public static void setRole(String role) {
+	public void setRole(String role) {
 		
 	}
 	public String getAddress() {

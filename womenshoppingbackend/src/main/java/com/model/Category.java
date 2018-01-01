@@ -20,7 +20,7 @@ public class Category implements Serializable
 	private static final long serialVersionUID = 1L;
 	@Id
 	private int cid;
-	private String cNmae;
+	private String cName;
 	@OneToMany(targetEntity=Product.class, fetch=FetchType.EAGER, mappedBy="Category")
 	private Set<Product> product=new HashSet<Product>(0);
 	
@@ -36,11 +36,11 @@ public class Category implements Serializable
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
-	public String getcNmae() {
-		return cNmae;
+	public String getcName() {
+		return cName;
 	}
-	public void setcNmae(String cNmae) {
-		this.cNmae = cNmae;
+	public void setcName(String cName) {
+		this.cName = cName;
 	}
 	
 	

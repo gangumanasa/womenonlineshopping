@@ -5,43 +5,42 @@ package com.daoimpl;
 	import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.dao.Userdao;
+import com.dao.UserDAO;
 	import com.model.User;
+	
+	@Repository("userDAO")
+	public class Userdaoimpl implements UserDAO {
 
-	@Repository(Userdao)
-	public class Userdaoimpl implements Userdao {
 
-		@Autowired
-		static
+		@Autowired 
 		SessionFactory sessionFactory;
 		
-		@Autowired
+		
 		public Userdaoimpl(SessionFactory sessionFactory)
 		{
-			
-			this.sessionFactory=sessionFactory;
-			
+			this.sessionFactory =sessionFactory;
 		}
 		
 		@Transactional
-		public boolean insertUser(User user) {
+		public boolean insertUser(User user) 
+		{
 
-	Session session=sessionFactory.openSession();
-
-	session.beginTransaction();
-	session.saveOrUpdate(user);
-	session.getTransaction().commit();
-	return false;
-
-			
+			try 
+			{
+	sessionFactory.getCurrentSession().saveOrUpdate(user);
+	System.out.println("Insertion Successfully....");
+			return true;
+			}
+			catch(Exception e)
+			{
+				System.out.println("Exception raised......"+e);
+			return false;
+			}
 		}
 
-		public void inserUser(User user) {
-			// TODO Auto-generated method stub
-			
-		}
 
-		
+
+
 	}
 
 

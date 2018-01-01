@@ -1,5 +1,7 @@
 package com.daoimpl;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,31 +12,36 @@ import com.dao.Categorydao;
 import com.model.*;
 
 
-@Repository
-@Service
+@Repository("categoryDAO")
+
 public class Categorydaoimpl implements Categorydao
 {
 	
 	
-	
-	
-	@Autowired
+	@Autowired 
 	SessionFactory sessionFactory;
-
-	@Autowired
-	public void SessionFactory(SessionFactory sessionFactory) 
+	
+	
+	public Categorydaoimpl(SessionFactory sessionFactory)
 	{
-		this.sessionFactory = sessionFactory;
+		this.sessionFactory =sessionFactory;
 	}
 	
-	public void insertCategory(Category category)
-	
+	@Transactional
+	public boolean insertCategory(Category category) 
 	{
-		Session session=sessionFactory.openSession();
 
-		session.beginTransaction();
-		session.saveOrUpdate(category);
-		session.getTransaction().commit();
+		try 
+		{
+sessionFactory.getCurrentSession().saveOrUpdate(category);
+System.out.println("Insertion Successfully....");
+		return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception raised......"+e);
+		return false;
+		}
 	}
 
 }

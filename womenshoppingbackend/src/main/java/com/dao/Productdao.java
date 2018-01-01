@@ -1,5 +1,8 @@
 package com.dao;
 
-public class Productdao {
+import com.model.Product;
 
+public interface Productdao
+{
+	public  boolean insertProduct(Product product);
 }
