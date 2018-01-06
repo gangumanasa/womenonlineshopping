@@ -2,19 +2,19 @@ package com.daoimpl;
 
 import javax.transaction.Transactional;
 
-import org.hibernate.Session;
+//import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
-import com.dao.Supplierdao;
+import com.dao.SupplierDAO;
 import com.model.Supplier;
 
 
 @Repository("supplierDAO")
 
-public class Supplierdaoimpl implements Supplierdao
+public class Supplierdaoimpl implements SupplierDAO
 {
 	@Autowired 
 	SessionFactory sessionFactory;
@@ -26,7 +26,7 @@ public class Supplierdaoimpl implements Supplierdao
 	}
 	
 	@Transactional
-	public boolean insertSupplier(Supplier supplier) 
+	public boolean addSupplier(Supplier supplier) 
 	{
 
 		try 

@@ -4,13 +4,13 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.dao.Productdao;
+import com.dao.ProductDAO;
 import com.model.Product;
 
 public class Producttestcases 
 {
 
-	static Productdao productdao;
+	static ProductDAO productDAO;
 	
 	
 	@BeforeClass
@@ -20,10 +20,10 @@ public class Producttestcases
 		
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		
-		context.scan("com.niit");
+		context.scan("com");
 		context.refresh();
 		@SuppressWarnings("unused")
-		Productdao Productdao=(Productdao)context.getBean("productdao");
+		ProductDAO ProductDAO=(ProductDAO)context.getBean("productdao");
 		System.out.println("Ending into Initialization product test case ");;
 		
 	
@@ -43,6 +43,6 @@ public class Producttestcases
 		product.setStock(200);
 		
 		
-		assertTrue("problem in Product", productdao.insertProduct(product));
+		assertTrue("problem in Product", productDAO.addProduct(product));
 	}
 }

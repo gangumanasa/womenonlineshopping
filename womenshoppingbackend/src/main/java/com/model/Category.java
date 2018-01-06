@@ -2,16 +2,13 @@ package com.model;
 import java.io.Serializable;
 import java.util.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.*;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-//@Table(Category)
+//@Table(name="CategoryTable")
 public class Category implements Serializable
 {
 	/**
@@ -30,6 +27,7 @@ public class Category implements Serializable
 	public void setProduct(Set<Product> product) {
 		this.product = product;
 	}
+	
 	public int getCid() {
 		return cid;
 	}

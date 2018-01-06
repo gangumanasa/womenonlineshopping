@@ -1,9 +1,9 @@
 package com.dao;
 import com.model.Supplier;
 
-public interface Supplierdao
+public interface SupplierDAO
 {
 
-	public  boolean insertSupplier(Supplier supplier);
+	public  boolean addSupplier(Supplier supplier);
 	
 }

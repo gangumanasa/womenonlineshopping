@@ -29,7 +29,6 @@ public class Supplier implements Serializable
 	public void setProduct(Set<Product> product) {
 		this.product = product;
 	}
-
 	public int getSid() {
 		return sid;
 	}

@@ -40,9 +40,11 @@ public class Admincontroller
 		Supplier ss=new Supplier();
 		ss.setSid(sid);
 		ss.setSuppliername(sname);
-		Supplierdaoimpl.insertSupplier(ss);
+		supplierdaoimpl.addSupplier(ss);
+
 		mv.setViewName("adding");
 		return mv;
+	}
 		
 		@RequestMapping(value="/saveCat",method=RequestMethod.POST)
 		@Transactional
@@ -50,9 +52,9 @@ public class Admincontroller
 		{
 			ModelAndView mv=new ModelAndView();
 			Category cc=new Category();
-			cc.setCid(cid);;
-			cc.setcName(cName);
-			Categorydaoimpl.insertCategory(cc);
+			cc.setCid(0);
+			cc.setcName(null);
+			categorydaoimpl.addCategory(cc);
 			mv.setViewName("adding");
 			return mv;
 			

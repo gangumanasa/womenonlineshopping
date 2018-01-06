@@ -2,19 +2,19 @@ package com.daoimpl;
 
 import javax.transaction.Transactional;
 
-import org.hibernate.Session;
+//import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
-import com.dao.Categorydao;
+import com.dao.CategoryDAO;
 import com.model.*;
 
 
 @Repository("categoryDAO")
 
-public class Categorydaoimpl implements Categorydao
+public class Categorydaoimpl implements CategoryDAO
 {
 	
 	
@@ -28,7 +28,7 @@ public class Categorydaoimpl implements Categorydao
 	}
 	
 	@Transactional
-	public boolean insertCategory(Category category) 
+	public boolean addCategory(Category category) 
 	{
 
 		try 

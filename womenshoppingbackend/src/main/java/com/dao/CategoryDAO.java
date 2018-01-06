@@ -1,8 +1,8 @@
 package com.dao;
 import com.model.*;
 
-public interface Categorydao {
+public interface CategoryDAO {
 
-	public boolean insertCategory(Category category);
+	public boolean addCategory(Category category);
 	
 }

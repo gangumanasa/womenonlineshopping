@@ -2,7 +2,7 @@ package com.dao;
 
 import com.model.Product;
 
-public interface Productdao
+public interface ProductDAO
 {
-	public  boolean insertProduct(Product product);
+	public  boolean addProduct(Product product);
 }

@@ -2,13 +2,12 @@ package com.model;
 
 
 import java.io.Serializable;
-import java.util.function.Supplier;
-
 import javax.persistence.*;
 
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
+//import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -30,7 +29,7 @@ public class Product implements Serializable
 	private int stock;
 	@OneToMany( fetch=FetchType.EAGER)
 	@JoinColumn(name="cid")
-	private Category category;
+	private Product product;
 	
 	
 	@SuppressWarnings("rawtypes")
@@ -84,17 +83,11 @@ public class Product implements Serializable
 		this.stock = stock;
 	}
 
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+	
 
 
 
-	public MultipartFile getPimage() {
+	/*public MultipartFile getPimage() {
 		return pimage;
 	}
 
@@ -108,7 +101,7 @@ public class Product implements Serializable
 
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
-	}
+	}*/
 	
 	
 	

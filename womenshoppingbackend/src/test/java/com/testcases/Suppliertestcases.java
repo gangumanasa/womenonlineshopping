@@ -1,19 +1,19 @@
 
-
 	package com.testcases;
 	import static org.junit.Assert.*;
 	import org.junit.BeforeClass;
 	import org.junit.Test;
 	import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-	import com.dao.*;
-	import com.model.Supplier;
+
+import com.dao.SupplierDAO;
+import com.model.Supplier;
 
 	public class Suppliertestcases 
 	{
 
-	static  Supplierdao supplierdao;
+	static  SupplierDAO supplierDAO;
 
-	@SuppressWarnings("resource")
+	
 	@BeforeClass
 	public static void initialize()
 	{
@@ -21,10 +21,10 @@
 		
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		
-		context.scan("com.niit");
+		context.scan("com");
 		context.refresh();
 		
-		Supplierdao Supplierdao = (Supplierdao)context.getBean("Supplierdao");
+		supplierDAO = (SupplierDAO)context.getBean("supplierDAO");
 		System.out.println("Ending into Initialization user test case ");;
 		
 	
@@ -38,7 +38,7 @@
 		Supplier supplier=new Supplier();
 		supplier.setSid(101);
 		supplier.setSuppliername("manasa");
-		assertTrue("problem in Supplier", supplierdao.insertSupplier(supplier));
+		assertTrue("problem in Supplier", supplierDAO.addSupplier(supplier));
 		System.out.println("Ending..... into Createing Supplier....");
 		
 	}

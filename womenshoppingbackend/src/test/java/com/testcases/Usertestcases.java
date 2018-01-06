@@ -18,7 +18,7 @@ public class Usertestcases
 		
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 
-		context.scan("com.niit");
+		context.scan("com");
 		context.refresh();
 		userDAO=(UserDAO)context.getBean("userDAO");
 		
@@ -38,10 +38,10 @@ public class Usertestcases
 		user.setName("sruthi");
 		user.setPassword("welcome");
 		user.setPhone("92345222");
-		user.setRole("ROLE_ADMIN");
+		user.setRoll("1234");
 		user.setAddress("Dilsuknagar,Hyderabad");
 		user.setEnabled(true);
-		assertTrue("problem in User", userDAO.insertUser(user));
+		assertTrue("problem in User", userDAO.addUser(user));
 		System.out.println("Ending into  User Test case ");
 		
 		

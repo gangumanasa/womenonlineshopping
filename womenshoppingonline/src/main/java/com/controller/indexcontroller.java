@@ -38,7 +38,7 @@ public class indexcontroller
 	
 
 	@RequestMapping (value="/saveRegister", method=RequestMethod.POST)
-	public ModelAndView saveRegister(@ModelAttribute ("user") User user,BindingResult result)
+	public ModelAndView saveRegister(@ModelAttribute("user") User user,BindingResult result)
 	{
 			ModelAndView mv=new ModelAndView();
 	
@@ -50,8 +50,8 @@ public class indexcontroller
 		}
 	else
 	{
-		User.setRole("ROLE_USER");
-		Userdaoimpl.insertUser(user);
+		user.setRoll("ROLE_USER");
+		userdaoimpl.addUser(user);	
 		mv.setViewName("index");
 		
 				

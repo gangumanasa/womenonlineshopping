@@ -6,10 +6,11 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dao.ProductDAO;
 import com.model.Product;
 
 @Repository("productDAO")
-public class Productdaoimpl {
+public class Productdaoimpl implements ProductDAO {
 
 	
 	@Autowired 
@@ -22,7 +23,7 @@ public class Productdaoimpl {
 	}
 	
 	@Transactional
-	public boolean insertProduct(Product product) 
+	public boolean addProduct(Product product) 
 	{
 
 		try 
