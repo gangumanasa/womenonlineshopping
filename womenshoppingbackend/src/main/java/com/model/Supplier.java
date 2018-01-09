@@ -3,12 +3,16 @@ package com.model;
 import java.io.Serializable;
 import java.util.*;
 
+import javassist.SerialVersionUID;
+
 import javax.persistence.*;
+import javax.validation.*;
 
 import org.springframework.stereotype.Component;
 
-@Component
 @Entity
+@Component
+@Table (name="Supplier")
 public class Supplier implements Serializable
 {
 	/**
@@ -17,37 +21,33 @@ public class Supplier implements Serializable
 	private static final long serialVersionUID = 1L;
 	@Id
 	private int sid;
-	private  String suppliername;
+	private String supplierName;
 	
-	@OneToMany(targetEntity=Product.class, fetch=FetchType.EAGER, mappedBy="Supplier")
-	private Set<Product> product=new HashSet<Product>(0);
-
-	public Set<Product> getProduct() {
-		return product;
-	}
-
-	public void setProduct(Set<Product> product) {
-		this.product = product;
-	}
+	
+	
+	@OneToMany(targetEntity=Product.class,fetch=FetchType.EAGER,mappedBy=("supplier"))
+	private Set<Product>product=new HashSet<Product>(0);
+	
 	public int getSid() {
 		return sid;
 	}
-
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
-
-	public String getSuppliername() {
-		return suppliername;
+	
+	public String getSupplierName() {
+		return supplierName;
 	}
-
-	public void setSuppliername(String suppliername) {
-		this.suppliername = suppliername;
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
 	}
+	
+	public Set<Product> getProduct() {
+		return product;
+	}
+	public void setProduct(Set<Product> product) {
+		this.product = product;
+	}
+	
 
-	
-	
-
-	
-	
 }

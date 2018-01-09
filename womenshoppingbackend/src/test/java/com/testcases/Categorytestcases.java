@@ -13,7 +13,7 @@ import com.model.Category;
 	public class Categorytestcases 
 	{
 
-	static  CategoryDAO categoryDAO;
+	static  CategoryDao categoryDao;
 
 	
 	@BeforeClass
@@ -26,7 +26,7 @@ import com.model.Category;
 		context.scan("com.niit");
 		context.refresh();
 		
-		 categoryDAO = (CategoryDAO)context.getBean("Categorydao");
+		 categoryDao = (CategoryDao)context.getBean("Categorydao");
 		System.out.println("Ending into Initialization user test case ");;
 		
 	
@@ -39,8 +39,8 @@ import com.model.Category;
 		System.out.println("Starting into creating Supplier Test case ");
 		Category category=new Category();
 		category.setCid(1101);
-		category.setcName("mamatha");
-		assertTrue("problem in Supplier", categoryDAO.addCategory(category));
+		category.setName("mamatha");
+		assertTrue("problem in Supplier", categoryDao.insertCategory(category));
 		System.out.println("Ending..... into Createing category....");
 		
 	}

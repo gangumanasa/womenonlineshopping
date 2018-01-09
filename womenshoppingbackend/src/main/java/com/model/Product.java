@@ -1,77 +1,79 @@
 package com.model;
 
-
 import java.io.Serializable;
-import javax.persistence.*;
+import java.util.*;
 
+import javassist.SerialVersionUID;
+
+import javax.persistence.*;
+import javax.validation.*;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
-//import org.springframework.web.multipart.MultipartFile;
 
-
-
-@Component
 @Entity
-public class Product implements Serializable
+@Component
+@Table (name="Product")
 
+public class Product  implements Serializable
 {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	@GeneratedValue
 	@Id
-	@GeneratedValue 
-	private int pid;
-	private String pName;
-	private String pDescription;
-	private double price;
+	
+	private int id;
+	private String name;
+	private String description;
+	private Float price;
 	private int stock;
-	@OneToMany( fetch=FetchType.EAGER)
-	@JoinColumn(name="cid")
-	private Product product;
 	
 	
-	@SuppressWarnings("rawtypes")
-	@OneToMany(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="cid")
+	private Category category;
+	
+	@ManyToOne
+	@JoinColumn(name="sid")
 	private Supplier supplier;
 	
+	@Transient			//used to prevent the field from getting persist in db
+	MultipartFile pImage;
 	
-	@javax.persistence.Transient
-	MultipartFile pimage;
+	private String imgname;
+	
+	
 
-	private String imageName;
-
-	public int getPid() {
-		return pid;
+	public int getId() {
+		return id;
 	}
 
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getpName() {
-		return pName;
+	public String getName() {
+		return name;
 	}
 
-	public void setpName(String pName) {
-		this.pName = pName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getpDescription() {
-		return pDescription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setpDescription(String pDescription) {
-		this.pDescription = pDescription;
-	}
+	
 
-	public double getPrice() {
+	public Float getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Float price) {
 		this.price = price;
 	}
 
@@ -83,31 +85,40 @@ public class Product implements Serializable
 		this.stock = stock;
 	}
 
-	
-
-
-
-	/*public MultipartFile getPimage() {
-		return pimage;
+	public Category getCategory() {
+		return category;
 	}
 
-	public void setPimage(MultipartFile pimage) {
-		this.pimage = pimage;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
-	public String getImageName() {
-		return imageName;
+	
+	public Supplier getSupplier() {
+		return supplier;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-	}*/
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+
+	public MultipartFile getpImage() {
+		return pImage;
+	}
+
+	public void setpImage(MultipartFile pImage) {
+		this.pImage = pImage;
+	}
 	
-	
-	
+	public String getImgname() {
+		return imgname;
+	}
+
+	public void setImgname(String imgname) {
+		this.imgname = imgname;
+	}
 
 	
 	
-	
-	
+
 }

@@ -1,46 +1,52 @@
 package com.model;
+
 import java.io.Serializable;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import org.springframework.stereotype.Component;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@Component
 @Entity
-//@Table(name="CategoryTable")
+@Table (name="Category")
 public class Category implements Serializable
 {
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	private int cid;
-	private String cName;
-	@OneToMany(targetEntity=Product.class, fetch=FetchType.EAGER, mappedBy="Category")
-	private Set<Product> product=new HashSet<Product>(0);
+	private String name;
 	
-	public Set<Product> getProduct() {
-		return product;
-	}
-	public void setProduct(Set<Product> product) {
-		this.product = product;
-	}
-	
+	@OneToMany(targetEntity=Product.class,fetch=FetchType.EAGER,mappedBy=("category"))	//EAGAR=it will fetch details immediately in object
+	private Set<Product>products=new HashSet<Product>(0);
+
 	public int getCid() {
 		return cid;
 	}
+
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
-	public String getcName() {
-		return cName;
+
+	public String getName() {
+		return name;
 	}
-	public void setcName(String cName) {
-		this.cName = cName;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
 
 }
