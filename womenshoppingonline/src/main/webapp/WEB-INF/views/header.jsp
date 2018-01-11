@@ -21,7 +21,7 @@
 
 <body>
 <div class="picture" style="text-align: center; color: green; font-family:cursive; font-size: xx-large;">
-	<h1><b>pixabay</b></h1>
+	<h1><b>Womens Shopping Online</b></h1>
 </div>
 <nav class="navbar navbar-inverse" role="navigation">
   	<div class="container-fluid">
@@ -32,36 +32,33 @@
        			 	<span class="icon-bar"></span>
         			<span class="icon-bar"></span>
       			</button>
-   				<img src="resources/images/logo2.png" style="width:28%;height:4%">
+   				<img src="resources/IMAGE01.jpg" style="width:28%;height:4%">
    			</div>
 
     <!-- ==============Collect the nav links ==========================-->
-    
-  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       					<ul class="nav navbar-nav">
    						<li><a href="${pageContext.request.contextPath}/index">Home</a> </li>
+   						<!--dropdown option for products -->
+        				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Category<span class="caret"></span></a>
+        					<ul class="dropdown-menu">
 
+        					</ul>
       					</li>
       					</ul>
       			
    						<ul class="nav navbar-nav navbar-right">
+
       							<li><a href="${pageContext.request.contextPath}/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
       							<li><a href="${pageContext.request.contextPath}/goToLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    							
-    							
-    							
-    							 <li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-    						
-    			<li><a href="${pageContext.request.contextPath}/admin/adding">Admin</a></li>
-         		<li><a href="${pageContext.request.contextPath}/admin/productList">Products</a></li>
-         		<li><a href="${pageContext.request.contextPath}/admin/categoryList">Category</a></li>
-         		<li><a href="${pageContext.request.contextPath}/admin/supplierList">Supplier</a></li>
-    						
 
     					</ul>
    			</div>
 
+       
 
+  </div><!-- /.container-fluid -->
 </nav>
 </body>
 </html>

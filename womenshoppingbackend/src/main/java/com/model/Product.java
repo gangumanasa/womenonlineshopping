@@ -28,7 +28,7 @@ public class Product  implements Serializable
 	private int id;
 	private String name;
 	private String description;
-	private Float price;
+	private double price;
 	private int stock;
 	
 	
@@ -69,11 +69,11 @@ public class Product  implements Serializable
 
 	
 
-	public Float getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
