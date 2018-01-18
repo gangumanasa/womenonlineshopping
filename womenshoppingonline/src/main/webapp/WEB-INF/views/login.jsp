@@ -13,7 +13,7 @@
 <style>
 body
 {
-background-image: url("resources/IMAGE BG1.htm");
+background-image: url("resources/images/wall2.jpg");
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -41,7 +41,7 @@ background-image: url("resources/IMAGE BG1.htm");
 
   <div class="container" style="color: black;">
     <!-- <label><b>Username</b></label> -->
-    <input type="text" placeholder="Email" name="username" required/>
+    <input type="text" placeholder="Email" name="username" required/><br><br>
 
     <!-- <label><b>Password</b></label> -->
     <input type="password" placeholder="Password" name="password" required/>

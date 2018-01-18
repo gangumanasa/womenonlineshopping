@@ -22,7 +22,7 @@ background-image: url("resources/images/wall2.jpg");
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-<title>E-Nature</title>
+<title>Women shopping</title>
 
 </head>
 <body>
@@ -40,15 +40,15 @@ background-image: url("resources/images/wall2.jpg");
 <div class="carousel-inner">
 <div class="carousel-inner" role="listbox" style=" width:100%; height: 500px !important;">
 <div class="item active">
-<img src="resources/images/r1.jpg" style="width:100%; height:50%">
+<img src="resources/images/Kanchisaree1.jpg" style="width:100%; height:50%">
 
 </div>
 <div class="item">
-<img src="resources/images/p8.jpg" style="width:100%;height:50%">
+<img src="resources/images/kuppadam saree1.jpg" style="width:100%;height:50%">
 
 </div>
 <div class="item">
-<img src="resources/images/p9.jpeg" style="width:100%;height:20%">
+<img src="resources/images/image2.jpg" style="width:100%;height:20%">
 </div>
 </div>
 </div>
@@ -68,11 +68,11 @@ background-image: url("resources/images/wall2.jpg");
 <div style="overflow:auto; background-color: white">
 <div class= "col-lg-4">
 
-<img src="resources/images/rr.jpg" width="350" height="250"/></div>
+<img src="resources/images/pochampally1.jpg" width="350" height="250"/></div>
 <div class= "col-lg-4">
-<img src="resources/images/mg1.jpg" width="350" height="250"/></div>
+<img src="resources/images/pochampallysaree2.jpg" width="350" height="250"/></div>
 <div class= "col-lg-4">
-<img src="resources/images/bamboo.jpg" width="350" height="250"/></div>
+<img src="resources/images/uppadasaree4.jpg" width="350" height="250"/></div>
 </div> 
 </div>
 <!-- ====================================================================================== -->

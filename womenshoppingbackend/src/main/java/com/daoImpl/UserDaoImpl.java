@@ -12,8 +12,7 @@ import com.model.User;
 @Repository("UserDaoImpl")
 	public class UserDaoImpl implements UserDao
 	{
-		@Autowired						
-		SessionFactory sessionFactory;		//SessionFactory is factory class through which we get session & perform db oprtaion
+		@Autowired SessionFactory sessionFactory;		//SessionFactory is factory class through which we get session & perform db oprtaion
 		//(one client request required one session factory )
 		//session= session object provides an interface between application & data in db
 		

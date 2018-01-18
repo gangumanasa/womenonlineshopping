@@ -9,7 +9,7 @@
 <style>
 body
 {
-background-image: url("../resources/IMAGE7.jpg");
+background-image: url("../resources/images/wall2.jpg");
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -41,7 +41,17 @@ background-image: url("../resources/IMAGE7.jpg");
 						<li><a href="#tab3primary" data-toggle="tab">Product</a></li>
 					</ul>
 				</div>
+			
 			</div> 
+
+
+
+
+
+
+
+
+
 <!-- ==============================For Category======================================================================== -->
 			<div class="panel-body" style="border: 2px solid black;">
 				<div class="tab-content">
@@ -58,6 +68,9 @@ background-image: url("../resources/IMAGE7.jpg");
 						
 						</form>
 					</div>
+
+
+
 					
 <!-- ========================For Supplier============================================================================ -->
 					<div class="tab-pane fade" id=tab2primary>
@@ -75,6 +88,12 @@ background-image: url("../resources/IMAGE7.jpg");
 								
 						</form>
 					</div>
+
+
+
+
+
+
 <!-- ==============================For Product=============================================================================== -->			
 					<div class="tab-pane fade" id=tab3primary>
 						<form action="<c:url value="/admin/saveProduct"/>" method="post" class="form-signin" enctype="multipart/form-data"/>
@@ -98,6 +117,11 @@ background-image: url("../resources/IMAGE7.jpg");
 									<td class="input-title">Product Stock</td>
 									<td><input type="text" name="pStock" required/></td>
 								</tr><br><br>
+
+
+
+
+
 <!--========================================= for category ===========================================================-->
 						<div class="from-group">								
 							<td>Select Category</td>
@@ -110,6 +134,8 @@ background-image: url("../resources/IMAGE7.jpg");
 								</select>
 							</td>
 						</div><br>
+
+
 <!-- ==================== for supplier=============================================================================== -->
 						<div class="from-group">								
 							<td>Select Supplier</td>
@@ -122,6 +148,9 @@ background-image: url("../resources/IMAGE7.jpg");
 								</select>
 							</td>
 						</div><br>
+
+
+
 <!-- ==================for image================================================================================== -->
 						<tr>
 							<div class="fileinput fileinput-new" data-provides="fileinput">

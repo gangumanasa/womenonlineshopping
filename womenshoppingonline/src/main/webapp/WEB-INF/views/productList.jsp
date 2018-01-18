@@ -10,7 +10,7 @@
 <style>
 body
 {
-background-image: url("../resources/IMAGE BG3.jpg");
+background-image: url("../resources/images/wall2.jpg");
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
